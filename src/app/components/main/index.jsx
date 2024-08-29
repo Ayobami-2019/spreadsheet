@@ -1,35 +1,41 @@
-import style from './style.module.css'
-import { tableHead, tableBody } from './data'
-import { TrendingUp } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-// import {
-//     Card,
-//     CardContent,
-//     CardDescription,
-//     CardFooter,
-//     CardHeader,
-//     CardTitle,
-// } from "@/components/ui/card"
-// import {
-//     ChartConfig,
-//     ChartContainer,
-//     ChartTooltip,
-//     ChartTooltipContent,
-// } from "@/components/ui/chart"
-// const chartConfig = {
-//     desktop: {
-//         label: "Desktop",
-//         color: "hsl(var(--chart-1))",
-//     },
-// }
-//   satisfies ChartConfig
+// "use client"
+import React from 'react';
+import style from './style.module.css';
+import { tableHead, tableBody } from './data';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+
+
+// import { Bar, BarChart } from "recharts"
+
+// import { ChartConfig, ChartContainer } from "../../../components/ui/chart"
+
+
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "../../../components/ui/card";
+import {
+    ChartContainer,
+    ChartTooltip,
+    ChartTooltipContent,
+    ChartLegend,
+    ChartLegendContent
+} from "../../../components/ui/chart";
+
+
+
 
 
 export const Main = () => {
     return (
         <main className={style.main}>
             <SpreadsheetTable tablehead={tableHead} tablebody={tableBody} />
-            <SpreadsheetChart />
+            <SpreadsheetChart tablebody={tableBody} />
+            {/* <Component/> */}
         </main>
     )
 }
@@ -73,45 +79,51 @@ export const SpreadsheetTable = (props) => {
     )
 }
 
-export const SpreadsheetChart = () => {
-
+export const SpreadsheetChart = (props) => {
+    const [total, setTotal] = React.useState()
+    const [subject, setSubject] = React.useState()
+    const chartData = props.tablebody;
+    
+    const chartConfig = {
+        desktop: {
+            label: "FIRST TERM",
+            color: "#ffc0cb",
+        },
+    };
 
     return (
         <section className={style.sheetChart}>
             <h3>CUMULATIVE BAR CHART</h3>
-            {/* <Card>
-                <CardHeader>
-                    <CardTitle>Bar Chart</CardTitle>
-                    <CardDescription>January - June 2024</CardDescription>
-                </CardHeader>
-                <CardContent>
+            <Card>
+                <CardContent className={style.container}>
                     <ChartContainer config={chartConfig}>
+                        
                         <BarChart accessibilityLayer data={chartData}>
-                            <CartesianGrid vertical={false} />
+                            <CartesianGrid />
                             <XAxis
-                                dataKey="month"
+                                dataKey="subject"
                                 tickLine={false}
-                                tickMargin={10}
-                                axisLine={false}
+                                tickMargin={2}
+                                // axisLine={false}
                                 tickFormatter={(value) => value.slice(0, 3)}
+                            />
+                            <YAxis
+                                dataKey="total"
+                                tickLine={false}
+                                tickMargin={2}
+                            // axisLine={false}
+                            // tickFormatter={(value) => value.slice(0, 3)}
                             />
                             <ChartTooltip
                                 cursor={false}
-                                content={<ChartTooltipContent hideLabel />}
+                                content={<ChartTooltipContent  />}
                             />
-                            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8} />
+                            <ChartLegend content={<ChartLegendContent nameKey="desktop"/>} />
+                            <Bar dataKey="total" fill="var(--color-desktop)" tickFormatter={(value) => value} />
                         </BarChart>
                     </ChartContainer>
                 </CardContent>
-                <CardFooter className="flex-col items-start gap-2 text-sm">
-                    <div className="flex gap-2 font-medium leading-none">
-                        Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-                    </div>
-                    <div className="leading-none text-muted-foreground">
-                        Showing total visitors for the last 6 months
-                    </div>
-                </CardFooter>
-            </Card> */}
+            </Card>
         </section>
     )
 }

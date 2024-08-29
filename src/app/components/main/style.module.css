@@ -10,6 +10,7 @@
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--dark-color);
+    /* color: hsl(350, 83%, 82%); */
 }
 .sheetTable>table td, .sheetTable>table th{
     border-bottom: 1px solid var(--border-ash);
@@ -33,10 +34,18 @@
     border: 1px solid var(--border-ash);
     border-radius: 2px;
     margin-top: 0.5rem;
+    height: fit-content;
 }
 .sheetChart>h3{
     padding: 1rem;
     border-bottom: 1px solid var(--border-ash);
     font-size: 0.8rem;
     color: var(--dark-color);
+    /* color: #ffc0cb; */
+}
+
+.chart{
+    height: 500px;
+    /* width: 100%; */
+    display: flex !important;
 }

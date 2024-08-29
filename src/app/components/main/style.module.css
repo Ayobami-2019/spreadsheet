@@ -1,0 +1,42 @@
+
+/* TABLE */
+.sheetTable>table{
+    border-collapse: collapse;
+    border-left: 1px solid var(--border-ash);
+    border-right: 1px solid var(--border-ash);
+    border-top: 1px solid var(--border-ash);
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+.sheetTable>table td, .sheetTable>table th{
+    border-bottom: 1px solid var(--border-ash);
+    padding: 0.5rem 0;
+    text-align: start;
+}
+.sheetTable>table th>span{
+    color: var(--gray-color);
+    font-size: 0.6rem;
+}
+.sheetTable>table>tbody td:first-child, .sheetTable>table th:first-child{
+    text-align: center;
+}
+.sheetTable>table>tbody td:nth-child(2), .sheetTable>table th:nth-child(2){
+    padding-left: 3rem;
+}
+
+
+/* chart section */
+.sheetChart{
+    border: 1px solid var(--border-ash);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+}
+.sheetChart>h3{
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-ash);
+    font-size: 0.8rem;
+    color: var(--dark-color);
+}

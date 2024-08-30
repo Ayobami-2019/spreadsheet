@@ -65,11 +65,14 @@
     justify-content: center;
 }
 .main>div button{
-    background: #c57784;
+    background: #1e90ff;
     padding: 0.5rem 1rem;
-    border-radius: 100px;
+    border-radius: 5px;
     color: #fff;
     margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
 }
 
 @media (max-width: 750px) {

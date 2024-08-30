@@ -6,6 +6,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 // Download dependencies
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { DownloadIcon } from 'lucide-react';
 
 // import { Bar, BarChart } from "recharts"
 
@@ -52,7 +53,7 @@ export const Main = () => {
             <div>
                 {/* <Merged  /> */}
                 <button onClick={downloadPage} value="download" >
-                    Download
+                    <DownloadIcon />Download
                 </button>
             </div>
             {/* <Component/> */}

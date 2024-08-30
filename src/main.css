@@ -2,6 +2,7 @@
 
 body {
   margin: 0 0.7rem;
+  background: red;
   padding-bottom: 3rem;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;

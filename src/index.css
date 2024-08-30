@@ -1,3 +1,5 @@
+/* SHADCN CSS */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,7 +32,39 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
+/* SHADCN CSS  */
 
+
+  /* APP CSS STARTS */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+  margin: 0 0.7rem;
+  background: red;
+  padding-bottom: 3rem;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+}
+ul{
+  list-style-type: none;
+}
+:root {
+  --gray-color: #858585;
+  --dark-color: #3c3c3c;
+  --border-ash: #dadada;
+}
+/* APP CSS ENDS */
+
+/* SHADCN CSS CONTINUES */
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -70,16 +104,16 @@
 
 .recharts-responsive-container{
   width: 80% !important;
-    height: 500px !important;
+    height: 300px !important;
     min-width: 0px;
 }
 .recharts-wrapper{
   position: relative;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 .recharts-legend-wrapper{
   height: 50px !important;
-  top: 0;
+  top: -1.5rem;
 }
 .aspect-video {
     aspect-ratio: 0;
@@ -88,4 +122,18 @@
 /* legend width */
 .w-2 {
   width: 2rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+
+
+/* Media Query */
+@media (max-width: 750px) {
+  .recharts-responsive-container{
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+
+  }
 }

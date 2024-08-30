@@ -10,4 +10,12 @@
     color: var(--dark-color);
     font-size: 0.7rem;
     font-weight: 700;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 750px) {
+    .footer{
+        justify-content: center;
+        text-align: center;
+    }
 }

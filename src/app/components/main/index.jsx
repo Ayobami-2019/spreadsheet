@@ -3,7 +3,9 @@ import React from 'react';
 import style from './style.module.css';
 import { tableHead, tableBody } from './data';
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
-
+// Download dependencies
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 // import { Bar, BarChart } from "recharts"
 
@@ -25,16 +27,34 @@ import {
     ChartLegend,
     ChartLegendContent
 } from "../../../components/ui/chart";
+import { Merged } from '../Merged';
 
 
-
+const downloadPage = () => {
+    console.log('I am working')
+    const input = document.getElementById('pdf-content');
+    // Specify the id of the element you want to convert to PDF
+    html2canvas(input).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        pdf.addImage(imgData, 'PNG', 0, 0);
+        pdf.save('Result.pdf');
+        // Specify the name of the downloaded PDF file
+    });
+}
 
 
 export const Main = () => {
     return (
         <main className={style.main}>
-            <SpreadsheetTable tablehead={tableHead} tablebody={tableBody} />
+            <SpreadsheetTable tablehead={tableHead} tablebody={tableBody} id="downloadBtn"/>
             <SpreadsheetChart tablebody={tableBody} />
+            <div>
+                {/* <Merged  /> */}
+                <button onClick={downloadPage} value="download" >
+                    Download
+                </button>
+            </div>
             {/* <Component/> */}
         </main>
     )
@@ -83,7 +103,7 @@ export const SpreadsheetChart = (props) => {
     const [total, setTotal] = React.useState()
     const [subject, setSubject] = React.useState()
     const chartData = props.tablebody;
-    
+
     const chartConfig = {
         desktop: {
             label: "FIRST TERM",
@@ -97,7 +117,7 @@ export const SpreadsheetChart = (props) => {
             <Card>
                 <CardContent className={style.container}>
                     <ChartContainer config={chartConfig}>
-                        
+
                         <BarChart accessibilityLayer data={chartData}>
                             <CartesianGrid />
                             <XAxis
@@ -116,9 +136,9 @@ export const SpreadsheetChart = (props) => {
                             />
                             <ChartTooltip
                                 cursor={false}
-                                content={<ChartTooltipContent  />}
+                                content={<ChartTooltipContent />}
                             />
-                            <ChartLegend content={<ChartLegendContent nameKey="desktop"/>} />
+                            <ChartLegend content={<ChartLegendContent nameKey="desktop" />} />
                             <Bar dataKey="total" fill="var(--color-desktop)" tickFormatter={(value) => value} />
                         </BarChart>
                     </ChartContainer>
@@ -126,4 +146,36 @@ export const SpreadsheetChart = (props) => {
             </Card>
         </section>
     )
+}
+
+
+
+export const DownloadBtn = () => {
+    // const downloadPage = () => {
+    //     console.log('I am working')
+    //     //     // text content
+    //     //     const texts = ["line 1", "line 2", "line 3"]
+    //     // // file object
+    //     //     const file = new Blob(texts, {type: 'text/plain'});
+    //     // // anchor link
+    //     //     const element = document.createElement("a");
+    //     //     element.href = URL.createObjectURL(file);
+    //     //     element.download = "100ideas-" + Date.now() + ".txt";
+    //     // // simulate link click
+    //     //     document.body.appendChild(element); // Required for this to work in FireFox
+    //     //     element.click();
+    //     const input = document.getElementById('pdf-content');
+    //     // Specify the id of the element you want to convert to PDF
+    //     html2canvas(input).then((canvas) => {
+    //         const imgData = canvas.toDataURL('image/png');
+    //         const pdf = new jsPDF();
+    //         pdf.addImage(imgData, 'PNG', 0, 0);
+    //         pdf.save('Result.pdf');
+    //         // Specify the name of the downloaded PDF file
+    //     });
+    // }
+
+    // return (
+
+    // )
 }

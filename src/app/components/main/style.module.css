@@ -1,21 +1,29 @@
-
+.sheetTable{
+    border: 1px solid var(--border-ash);
+    margin-top: 0.5rem;
+}
 /* TABLE */
 .sheetTable>table{
     border-collapse: collapse;
-    border-left: 1px solid var(--border-ash);
+    /* border-left: 1px solid var(--border-ash);
     border-right: 1px solid var(--border-ash);
-    border-top: 1px solid var(--border-ash);
+    border-top: 1px solid var(--border-ash); */
     width: 100%;
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+   
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--dark-color);
+    /* border-spacing: 10px; */
     /* color: hsl(350, 83%, 82%); */
 }
 .sheetTable>table td, .sheetTable>table th{
     border-bottom: 1px solid var(--border-ash);
-    padding: 0.5rem 0;
+    padding: 0.3rem 0.5rem;
     text-align: start;
+    text-wrap: nowrap;
+    
+    /* border: 1px solid ; */
+    
 }
 .sheetTable>table th>span{
     color: var(--gray-color);
@@ -25,7 +33,10 @@
     text-align: center;
 }
 .sheetTable>table>tbody td:nth-child(2), .sheetTable>table th:nth-child(2){
-    padding-left: 3rem;
+    /* text-align: right; */
+    width: 300px;
+    box-sizing: border-box;
+    /* padding-left: 2rem; */
 }
 
 
@@ -37,7 +48,7 @@
     height: fit-content;
 }
 .sheetChart>h3{
-    padding: 1rem;
+    padding: 0.3rem 1rem;
     border-bottom: 1px solid var(--border-ash);
     font-size: 0.8rem;
     color: var(--dark-color);
@@ -48,4 +59,25 @@
     height: 500px;
     /* width: 100%; */
     display: flex !important;
+}
+@media (max-width: 750px) {
+    .sheetTable{
+        overflow-x: scroll;
+    }
+    .sheetChart{
+        padding: 0;
+    }
+    .recharts-layer g{
+        width: 30px !important;
+        overflow: hidden;
+        background: black !important;
+        display: flex;
+    }
+}
+@media (max-width:450px) {
+    .sheetTable>table>tbody td:nth-child(2), .sheetTable>table th:nth-child(2){
+        /* text-align: right; */
+        width: initial;
+        padding-left: 0;
+    }
 }

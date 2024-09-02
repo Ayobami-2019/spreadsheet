@@ -33,15 +33,16 @@ import { Merged } from '../Merged';
 
 const downloadPage = () => {
     console.log('I am working')
-    const input = document.getElementById('pdf-content');
+    window.print()
+    // const input = document.getElementById('pdf-content');
     // Specify the id of the element you want to convert to PDF
-    html2canvas(input).then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        pdf.save('Result.pdf');
+    // html2canvas(input).then((canvas) => {
+    //     const imgData = canvas.toDataURL('image/png');
+    //     const pdf = new jsPDF();
+    //     pdf.addImage(imgData, 'PNG', 0, 0);
+    //     pdf.save('Result.pdf');
         // Specify the name of the downloaded PDF file
-    });
+    // });
 }
 
 

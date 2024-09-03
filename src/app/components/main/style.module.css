@@ -1,38 +1,66 @@
-.sheetTable{
+.sheetTable {
     border: 1px solid var(--border-ash);
     margin-top: 0.5rem;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 /* TABLE */
-.sheetTable>table{
+.sheetTable>table {
     border-collapse: collapse;
     /* border-left: 1px solid var(--border-ash);
     border-right: 1px solid var(--border-ash);
     border-top: 1px solid var(--border-ash); */
     width: 100%;
-   
+
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--dark-color);
     /* border-spacing: 10px; */
     /* color: hsl(350, 83%, 82%); */
 }
-.sheetTable>table td, .sheetTable>table th{
+
+.sheetTable>table td,
+.sheetTable>table th {
     border-bottom: 1px solid var(--border-ash);
     padding: 0.3rem 0.5rem;
     text-align: start;
     text-wrap: nowrap;
-    
+
     /* border: 1px solid ; */
-    
+
 }
-.sheetTable>table th>span{
+
+.sheetTable>table th>span {
     color: var(--gray-color);
     font-size: 0.6rem;
 }
-.sheetTable>table>tbody td:first-child, .sheetTable>table th:first-child{
+
+.sheetTable>table>tbody td:first-child,
+.sheetTable>table th:first-child {
     text-align: center;
 }
-.sheetTable>table>tbody td:nth-child(2), .sheetTable>table th:nth-child(2){
+
+.sheetTable>table>tbody td:nth-child(2),
+.sheetTable>table th:nth-child(2) {
     /* text-align: right; */
     width: 300px;
     box-sizing: border-box;
@@ -41,13 +69,14 @@
 
 
 /* chart section */
-.sheetChart{
+.sheetChart {
     border: 1px solid var(--border-ash);
     border-radius: 2px;
     margin-top: 0.5rem;
     height: fit-content;
 }
-.sheetChart>h3{
+
+.sheetChart>h3 {
     padding: 0.3rem 1rem;
     border-bottom: 1px solid var(--border-ash);
     font-size: 0.8rem;
@@ -55,16 +84,18 @@
     /* color: #ffc0cb; */
 }
 
-.chart{
+.chart {
     height: 500px;
     /* width: 100%; */
     display: flex !important;
 }
-.main>div{
+
+.main>div {
     display: flex;
     justify-content: center;
 }
-.main>div button{
+
+.main>div button {
     background: #1e90ff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -76,21 +107,35 @@
 }
 
 @media (max-width: 750px) {
-    .sheetTable{
+    .sheetTable {
         overflow-x: scroll;
+
     }
-    .sheetChart{
+
+    /* width */
+    .sheetTable::-webkit-scrollbar {
+        width: 5px;
+        height: 4px;
+        border: 1px solid #d5d5d5;
+    }
+
+
+    .sheetChart {
         padding: 0;
     }
-    .recharts-layer g{
+
+    .recharts-layer g {
         width: 30px !important;
         overflow: hidden;
         background: black !important;
         display: flex;
     }
 }
+
 @media (max-width:450px) {
-    .sheetTable>table>tbody td:nth-child(2), .sheetTable>table th:nth-child(2){
+
+    .sheetTable>table>tbody td:nth-child(2),
+    .sheetTable>table th:nth-child(2) {
         /* text-align: right; */
         width: initial;
         padding-left: 0;

@@ -7,6 +7,10 @@ const today = new Date().toLocaleDateString('en-GB', {
     day:   'numeric',
     year:  'numeric',
 });
+const zeroPad=(i)=> {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
 // console.log(today)
 
 
@@ -15,6 +19,7 @@ const today = new Date().toLocaleDateString('en-GB', {
     useEffect(() => {
         
         var timer = setInterval(()=>setDate(new Date()), 1000 )
+        // var timer = setInterval(()=>setDate(today, 1000 )
         return function cleanup() {
             clearInterval(timer)
         }

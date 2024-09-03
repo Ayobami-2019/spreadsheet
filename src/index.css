@@ -102,15 +102,24 @@ ul{
   }
 }
 
+div#scroll-container.overflow-x-auto{
+  width: 100% !important;
+  /* overflow-x: scroll; */
+}
 .recharts-responsive-container{
-  width: 80% !important;
+  min-width: 80% !important;
     height: 300px !important;
     min-width: 0px;
+    
+    
 }
 .recharts-wrapper{
   position: relative;
   margin-top: 1.5rem;
 }
+/* .recharts-wrapper>svg{
+  background: red;
+} */
 .recharts-legend-wrapper{
   height: 50px !important;
   top: -1.5rem;
@@ -126,14 +135,23 @@ ul{
 .p-6 {
   padding: 1.5rem;
 }
+/* g.recharts-layer.recharts-bar-rectangle{
 
+}
+path#1.recharts-rectangle{
+
+} */
 
 /* Media Query */
 @media (max-width: 750px) {
   .recharts-responsive-container{
-    width: 100% !important;
+    min-width: 100% !important;
     margin: 0;
     padding: 0;
+    
 
   }
+}
+@media (max-width:400px) {
+  
 }

@@ -2,8 +2,8 @@ export const tableHead=['#',  'Subject',
     {title: 'CA-1', total: '20'},
     {title: 'CA-2', total: '20'},
     {title: 'Exam', total: '100'},
-    {title: 'CLM', total: '100'},
-    {title: 'CHM', total: '100'},
+    // {title: 'CLM', total: '100'},
+    // {title: 'CHM', total: '100'},
     {title: 'Total', total: '100'},
     'Grade'
 ]

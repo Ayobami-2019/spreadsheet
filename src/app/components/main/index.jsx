@@ -66,17 +66,18 @@ export const Main = () => {
 export const SpreadsheetTable = (props) => {
     const [data, setData]=React.useState([])
     React.useEffect(() => {
-        axios.get('../../../broadsheet-sample/student-report-sheet.json')
+        axios.get('./broadsheet-sample/student-report-sheet.json')
             .then(result => {
                 // setData(result.data[index])
-                console.log(result)
+                const studentData=result.data.student.subjects
+                setData(studentData)
             })
             .catch(error =>
                 console.log(error))
 
         
     }, [])
-    // console.log(props)
+    //console.log(data)
     return (
         <section className={style.sheetTable}>
             <table>
@@ -92,17 +93,17 @@ export const SpreadsheetTable = (props) => {
                 </thead>
                 <tbody>
 
-                    {props.tablebody.map((data) =>
-                        <tr key={data.id}>
-                            <td>{data.id}</td>
-                            <td>{data.subject}</td>
-                            <td>{data.ca1}</td>
-                            <td>{data.ca2}</td>
-                            <td>{data.exam}</td>
-                            <td>{data.clm}</td>
-                            <td>{data.chm}</td>
-                            <td>{data.total}</td>
-                            <td>{data.grade}</td>
+                    {data.map((data, index) =>
+                        <tr key={index+1}>
+                            <td>{index+1}</td>
+                            <td>{data.name}</td>
+                            <td>{data.grading.ca1}</td>
+                            <td>{data.grading.ca2}</td>
+                            <td>{data.grading.exam}</td>
+                            {/* <td>{data.clm}</td>
+                            <td>{data.chm}</td> */}
+                            <td>{data.grading.total}</td>
+                            <td>{data.grading.letterGrade}</td>
 
                         </tr>
                     )}
@@ -115,9 +116,22 @@ export const SpreadsheetTable = (props) => {
 }
 
 export const SpreadsheetChart = (props) => {
-    const [total, setTotal] = React.useState()
-    const [subject, setSubject] = React.useState()
-    const chartData = props.tablebody;
+    // const [total, setTotal] = React.useState()
+    // const [subject, setSubject] = React.useState()
+    const [data, setData]=React.useState([])
+    React.useEffect(() => {
+        axios.get('./broadsheet-sample/student-report-sheet.json')
+            .then(result => {
+                // setData(result.data[index])
+                const studentData=result.data.student.subjects
+                setData(studentData)
+            })
+            .catch(error =>
+                console.log(error))
+
+        
+    }, [])
+    const chartData = data;
 
     const chartConfig = {
         desktop: {
@@ -136,14 +150,14 @@ export const SpreadsheetChart = (props) => {
                         <BarChart accessibilityLayer data={chartData}>
                             <CartesianGrid />
                             <XAxis
-                                dataKey="subject"
+                                dataKey="name"
                                 tickLine={false}
                                 tickMargin={2}
                                 // axisLine={false}
                                 tickFormatter={(value) => value.slice(0, 3)}
                             />
                             <YAxis
-                                dataKey="total"
+                                dataKey="grading.total"
                                 tickLine={false}
                                 tickMargin={2}
                             // axisLine={false}
@@ -154,7 +168,7 @@ export const SpreadsheetChart = (props) => {
                                 content={<ChartTooltipContent />}
                             />
                             <ChartLegend content={<ChartLegendContent nameKey="desktop" />} />
-                            <Bar dataKey="total" fill="var(--color-desktop)" tickFormatter={(value) => value} />
+                            <Bar dataKey="grading.total" fill="var(--color-desktop)" tickFormatter={(value) => value} />
                         </BarChart>
                     </ChartContainer>
                 </CardContent>

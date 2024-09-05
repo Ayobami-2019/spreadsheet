@@ -1,0 +1,211 @@
+{
+  "class": "SS1",
+  "session": "2023/2024",
+  "term": "First",
+  "broadsheet": [
+    {
+      "studentId": "550e8400-e29b-41d4-a716-446655440001",
+      "studentName": "John Doe",
+      "subjects": {
+        "Biology": {
+          "ca1": 18,
+          "ca2": 20,
+          "exam": 55,
+          "total": 93
+        },
+        "Chemistry": {
+          "ca1": 16,
+          "ca2": 19,
+          "exam": 50,
+          "total": 85
+        },
+        "Physics": {
+          "ca1": 12,
+          "ca2": 13,
+          "exam": 40,
+          "total": 65
+        },
+        "Mathematics": {
+          "ca1": 17,
+          "ca2": 19,
+          "exam": 46,
+          "total": 82
+        },
+        "English Language": {
+          "ca1": 14,
+          "ca2": 15,
+          "exam": 44,
+          "total": 73
+        },
+        "Computer Studies": {
+          "ca1": 19,
+          "ca2": 18,
+          "exam": 55,
+          "total": 92
+        },
+        "Civic Education": {
+          "ca1": 15,
+          "ca2": 17,
+          "exam": 48,
+          "total": 80
+        },
+        "Economics": {
+          "ca1": 13,
+          "ca2": 15,
+          "exam": 49,
+          "total": 77
+        },
+        "Food and Nutrition": {
+          "ca1": 17,
+          "ca2": 18,
+          "exam": 52,
+          "total": 87
+        },
+        "Geography": {
+          "ca1": 16,
+          "ca2": 17,
+          "exam": 50,
+          "total": 83
+        }
+      },
+      "termTotal": 807,
+      "termAverage": 80.7
+    },
+    {
+      "studentId": "550e8400-e29b-41d4-a716-446655440002",
+      "studentName": "Jane Smith",
+      "subjects": {
+        "Biology": {
+          "ca1": 15,
+          "ca2": 17,
+          "exam": 48,
+          "total": 80
+        },
+        "Chemistry": {
+          "ca1": 18,
+          "ca2": 19,
+          "exam": 50,
+          "total": 87
+        },
+        "Physics": {
+          "ca1": 14,
+          "ca2": 16,
+          "exam": 42,
+          "total": 72
+        },
+        "Mathematics": {
+          "ca1": 20,
+          "ca2": 19,
+          "exam": 55,
+          "total": 94
+        },
+        "English Language": {
+          "ca1": 16,
+          "ca2": 18,
+          "exam": 47,
+          "total": 81
+        },
+        "Computer Studies": {
+          "ca1": 18,
+          "ca2": 20,
+          "exam": 53,
+          "total": 91
+        },
+        "Civic Education": {
+          "ca1": 17,
+          "ca2": 18,
+          "exam": 52,
+          "total": 87
+        },
+        "Economics": {
+          "ca1": 15,
+          "ca2": 17,
+          "exam": 49,
+          "total": 81
+        },
+        "Food and Nutrition": {
+          "ca1": 19,
+          "ca2": 18,
+          "exam": 54,
+          "total": 91
+        },
+        "Geography": {
+          "ca1": 16,
+          "ca2": 17,
+          "exam": 50,
+          "total": 83
+        }
+      },
+      "termTotal": 837,
+      "termAverage": 83.7
+    },
+    {
+      "studentId": "550e8400-e29b-41d4-a716-446655440003",
+      "studentName": "David Brown",
+      "subjects": {
+        "Biology": {
+          "ca1": 17,
+          "ca2": 18,
+          "exam": 50,
+          "total": 85
+        },
+        "Chemistry": {
+          "ca1": 14,
+          "ca2": 16,
+          "exam": 46,
+          "total": 76
+        },
+        "Physics": {
+          "ca1": 16,
+          "ca2": 17,
+          "exam": 45,
+          "total": 78
+        },
+        "Mathematics": {
+          "ca1": 19,
+          "ca2": 18,
+          "exam": 54,
+          "total": 91
+        },
+        "English Language": {
+          "ca1": 15,
+          "ca2": 17,
+          "exam": 46,
+          "total": 78
+        },
+        "Computer Studies": {
+          "ca1": 17,
+          "ca2": 18,
+          "exam": 52,
+          "total": 87
+        },
+        "Civic Education": {
+          "ca1": 16,
+          "ca2": 19,
+          "exam": 50,
+          "total": 85
+        },
+        "Economics": {
+          "ca1": 15,
+          "ca2": 17,
+          "exam": 49,
+          "total": 81
+        },
+        "Food and Nutrition": {
+          "ca1": 14,
+          "ca2": 16,
+          "exam": 48,
+          "total": 78
+        },
+        "Geography": {
+          "ca1": 16,
+          "ca2": 17,
+          "exam": 50,
+          "total": 83
+        }
+      },
+      "termTotal": 822,
+      "termAverage": 82.2
+    }
+  ]
+}

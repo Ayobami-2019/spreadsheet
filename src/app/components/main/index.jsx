@@ -7,6 +7,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { DownloadIcon } from 'lucide-react';
+import axios from 'axios';
 
 // import { Bar, BarChart } from "recharts"
 
@@ -29,7 +30,7 @@ import {
     ChartLegendContent
 } from "../../../components/ui/chart";
 import { Merged } from '../Merged';
-
+// import json from '../../../broadsheet-sample/'
 
 const downloadPage = () => {
     console.log('I am working')
@@ -63,6 +64,18 @@ export const Main = () => {
 }
 
 export const SpreadsheetTable = (props) => {
+    const [data, setData]=React.useState([])
+    React.useEffect(() => {
+        axios.get('../../../broadsheet-sample/student-report-sheet.json')
+            .then(result => {
+                // setData(result.data[index])
+                console.log(result)
+            })
+            .catch(error =>
+                console.log(error))
+
+        
+    }, [])
     // console.log(props)
     return (
         <section className={style.sheetTable}>

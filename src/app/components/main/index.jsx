@@ -30,6 +30,8 @@ import {
     ChartLegendContent
 } from "../../../components/ui/chart";
 import { Merged } from '../Merged';
+import { subjectInfo } from '../../utils/API';
+
 // import json from '../../../broadsheet-sample/'
 
 const downloadPage = () => {
@@ -66,14 +68,14 @@ export const Main = () => {
 export const SpreadsheetTable = (props) => {
     const [data, setData]=React.useState([])
     React.useEffect(() => {
-        axios.get('./broadsheet-sample/student-report-sheet.json')
-            .then(result => {
-                // setData(result.data[index])
-                const studentData=result.data.student.subjects
-                setData(studentData)
-            })
-            .catch(error =>
-                console.log(error))
+        subjectInfo()
+        .then(result => {
+            // setData(result.data[index])
+            const studentData=result.data.student.subjects
+            setData(studentData)
+        })
+        .catch(error =>
+            console.log(error))
 
         
     }, [])
@@ -120,7 +122,7 @@ export const SpreadsheetChart = (props) => {
     // const [subject, setSubject] = React.useState()
     const [data, setData]=React.useState([])
     React.useEffect(() => {
-        axios.get('./broadsheet-sample/student-report-sheet.json')
+        subjectInfo()
             .then(result => {
                 // setData(result.data[index])
                 const studentData=result.data.student.subjects
